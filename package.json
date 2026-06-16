@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "proyecto de prueba, api rest y mongodb como sistema de persistencia de datos",
   "main": "index.js",
+  "packageManager": "pnpm@11.7.0",
   "scripts": {
-    "dev": "set DEBUG=app:* & nodemon src/index.js"
+    "dev": "set DEBUG=app:* & nodemon src/index.js",
+    "start": "node src/index.js"
   },
   "keywords": [
     "dummy",
@@ -14,13 +16,6 @@
   ],
   "author": "Rodrigo Llamas Gil",
   "license": "MIT",
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "^11.5.1",
-      "onFail": "download"
-    }
-  },
   "type": "commonjs",
   "dependencies": {
     "debug": "^4.4.3",
@@ -30,7 +25,7 @@
     "http-errors": "^2.0.1",
     "mongodb": "^7.2.0"
   },
-  "devDependencies": {
+  "devDependencies": { 
     "nodemon": "^3.1.14"
   }
 }
