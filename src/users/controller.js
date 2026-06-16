@@ -42,7 +42,7 @@ module.exports.UsersController = {
       }
     } catch (error) {
       debug(error);
-      response.status(500).json({ message: "Internal server error" });
+      res.status(500).json({ message: "Internal server error" });
     }
   },
 
@@ -52,7 +52,7 @@ module.exports.UsersController = {
       Response.success(res, 200, "Usuario actualizado");
     } catch (error) {
       debug(error);
-      response.status(500).json({ message: "Internal server error" });
+      res.status(500).json({ message: "Internal server error" });
     }
   },
 
@@ -62,7 +62,7 @@ module.exports.UsersController = {
       Response.success(res, 200, "Usuario eliminado");
     } catch (error) {
       debug(error);
-      response.status(500).json({ message: "Internal server error" });
+      res.status(500).json({ message: "Internal server error" });
     }
   },
 };
