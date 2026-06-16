@@ -32,6 +32,7 @@ module.exports.UsersController = {
   },
 
   createUser: async (req, res) => {
+    console.log("¡LOG DE PRUEBA: La ruta POST ha sido alcanzada!");
     try {
       const { body } = req;
       if (!body || Object.keys(body).length === 0) {
