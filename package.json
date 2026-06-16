@@ -1,0 +1,36 @@
+{
+  "name": "proyecto-dummy-nodejs-mongodb",
+  "version": "1.0.0",
+  "description": "proyecto de prueba, api rest y mongodb como sistema de persistencia de datos",
+  "main": "index.js",
+  "scripts": {
+    "dev": "set DEBUG=app:* & nodemon src/index.js"
+  },
+  "keywords": [
+    "dummy",
+    "nodejs",
+    "mongodb",
+    "project"
+  ],
+  "author": "Rodrigo Llamas Gil",
+  "license": "MIT",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.5.1",
+      "onFail": "download"
+    }
+  },
+  "type": "commonjs",
+  "dependencies": {
+    "debug": "^4.4.3",
+    "dotenv": "^17.4.2",
+    "excel4node": "^1.8.2",
+    "express": "^5.2.1",
+    "http-errors": "^2.0.1",
+    "mongodb": "^7.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
