@@ -59,7 +59,7 @@ module.exports.UsersController = {
 
   deleteUser: async (req, res) => {
     try {
-      await UsersService.deleteProduct(req.params.id);
+      await UsersService.deleteUser(req.params.id);
       Response.success(res, 200, "Usuario eliminado");
     } catch (error) {
       debug(error);

@@ -85,7 +85,6 @@ const update = async (id, product) => {
 const deleteProduct = async (id) => {
   if (!ObjectId.isValid(id)) throw new Error("Invalid ID format");
   const collection = await Database(COLLECTION);
-  if (!id) throw new Error("id argument doest not exist");
   const result = await collection.deleteOne({ _id: new ObjectId(id) });
   return result;
 };
@@ -108,7 +107,7 @@ const decrementStock = async (productId, quantity) => {
     { returnDocument: "after" }, // Opciones: devuelve el documento después de la actualización
   );
 
-  return result; // En versiones recientes del driver, result es el documento o null.
+  return result.value; // En versiones recientes del driver, result es ModifyResult, necesitamos .value
 };
 
 //Exportar 'services'

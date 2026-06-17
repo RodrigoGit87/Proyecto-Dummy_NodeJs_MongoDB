@@ -1,4 +1,4 @@
-const { request, response } = require("express");
+
 /*======================
 Este modulo controller se encargará de la respuestas de los metodos get y post del archivo index del
 modulo products
@@ -70,16 +70,16 @@ module.exports.ProductsController = {
       
     } catch (error) {
       debug(error);
-      response.status(500).json({ message: "Internal server error" });
+      res.status(500).json({ message: "Internal server error" });
     }
   },
 
-  generateReport: (req, res) => {
+  generateReport: async (req, res) => {
     try {
-      ProductsService.generateReport("Inventario", res);
+      await ProductsService.generateReport("Inventario", res);
     } catch (error) {
       debug(error);
-      response.status(500).json({ message: "Internal server error" });
+      res.status(500).json({ message: "Internal server error" });
     }
   },
   // controllers para crear endpoint update
@@ -89,7 +89,7 @@ module.exports.ProductsController = {
       Response.success(res, 200, "Producto actualizado");
     } catch (error) {
       debug(error);
-      response.status(500).json({ message: "Internal server error" });
+      res.status(500).json({ message: "Internal server error" });
     }
   },
   // controllers para crear endpoint delete
@@ -99,7 +99,7 @@ module.exports.ProductsController = {
       Response.success(res, 200, "Producto eliminado");
     } catch (error) {
       debug(error);
-      response.status(500).json({ message: "Internal server error" });
+      res.status(500).json({ message: "Internal server error" });
     }
   },
 

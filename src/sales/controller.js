@@ -1,4 +1,4 @@
-const { SalesController, SalesService } = require("./services");
+const { SalesService } = require("./services");
 const debug = require("debug")("app:module-sales-controller");
 
 const { Response } = require("../common/response");

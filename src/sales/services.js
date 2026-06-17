@@ -10,16 +10,16 @@ const getAll = async () => {
 };
 
 const getById = async (id) => {
+  if (!ObjectId.isValid(id)) throw new Error("Invalid ID format");
   const collection = await Database(COLLECTION);
   return collection.findOne({ _id: new ObjectId(id) });
 };
 
 const update = async (id, sale) => {
-  const collection = await Database(COLLECTION);
-
-  if (!id || !sale || typeof sale !== "object") {
+  if (!ObjectId.isValid(id) || !sale || typeof sale !== "object") {
     throw new Error("Invalid arguments: 'id' and 'sale' object are required");
   }
+  const collection = await Database(COLLECTION);
 
   const result = await collection.updateOne(
     { _id: new ObjectId(id) },
@@ -30,8 +30,8 @@ const update = async (id, sale) => {
 };
 
 const deleteSale = async (id) => {
+  if (!ObjectId.isValid(id)) throw new Error("Invalid ID format");
   const collection = await Database(COLLECTION);
-  if (!id) throw new Error('id argument does not exist');
   const result = await collection.deleteOne({ _id: new ObjectId(id) });
   return result;
 };

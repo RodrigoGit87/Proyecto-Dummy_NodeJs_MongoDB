@@ -13,7 +13,7 @@ module.exports.Database = (collection) =>
         debug("Nueva conexion realizada con MongoDB");
       }
       debug("Reutilizando conexión");
-      const db = connection.db( config.mongoDbName);
+      const db = connection.db(config.mongoDbname);
       resolve(db.collection(collection));
     } catch (error) {
       reject(error);

@@ -2,11 +2,10 @@ const excelGenerator = (products, name, res) => {
 const xl = require("excel4node");
 
   products = products.map((product) => {
-    let id = product._id.toString();
-    delete product._id;
+    const { _id, ...productData } = product;
     return {
-      id,
-      ...product,
+      id: _id.toString(),
+      ...productData,
     };
   });
 
