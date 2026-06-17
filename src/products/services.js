@@ -107,7 +107,7 @@ const decrementStock = async (productId, quantity) => {
     { returnDocument: "after" }, // Opciones: devuelve el documento después de la actualización
   );
 
-  return result.value; // En versiones recientes del driver, result es ModifyResult, necesitamos .value
+  return result; // En mongodb v7, findOneAndUpdate devuelve el documento directamente
 };
 
 //Exportar 'services'
